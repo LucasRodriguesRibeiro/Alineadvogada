@@ -14,7 +14,7 @@ const Navbar = () => {
   }, []);
   const links = [
     { label: 'Início', href: '#home' },
-    { label: 'Sobre', href: '#autoridade' },
+    { label: 'Sobre', href: '#sobre' },
     { label: 'Serviços', href: '#servicos' },
     { label: 'Processo', href: '#processo' },
     { label: 'Diferenciais', href: '#diferenciais' },
@@ -38,11 +38,11 @@ const Navbar = () => {
       <AnimatePresence>
         {open && (
           <motion.div initial={{opacity:0,y:-10}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-10}}
-            className="md:hidden bg-[#0d0d0d] border-t border-white/5 px-6 py-6 flex flex-col gap-5">
+            className="md:hidden bg-[#0d0d0d] border-t border-white/5 px-6 py-10 flex flex-col items-center gap-8 text-center">
             {links.map(l => (
-              <a key={l.label} href={l.href} onClick={()=>setOpen(false)} className="text-white/70 hover:text-[#C9A24A] text-sm font-medium tracking-widest uppercase transition-colors">{l.label}</a>
+              <a key={l.label} href={l.href} onClick={()=>setOpen(false)} className="text-white/70 hover:text-[#C9A24A] text-sm font-medium tracking-[0.2em] uppercase transition-colors">{l.label}</a>
             ))}
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary text-center text-xs">Solicitar Orçamento</a>
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-xs">Solicitar Orçamento</a>
           </motion.div>
         )}
       </AnimatePresence>
@@ -92,36 +92,71 @@ const Hero = () => (
   </section>
 );
 
-const Authority = () => (
-  <section id="autoridade" className="section-padding bg-section-card border-y border-white/5">
-    <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-      <motion.div initial={{opacity:0,x:-30}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:0.8}}>
-        <div className="tag-gold mb-5">
-          <span className="w-5 h-px bg-[#C9A24A]"/> Sobre a JurisSites
-        </div>
-        <h2 className="text-3xl lg:text-5xl font-light text-white mb-6 leading-tight" style={{fontFamily:'Cormorant Garamond,serif'}}>
-          Presença digital <span className="text-gold-gradient italic">estratégica</span> para advogados
-        </h2>
-        <div className="gold-divider mb-8"/>
-        <div className="space-y-5 text-white/60 text-sm lg:text-base leading-relaxed font-light">
-          <p>Na JurisSites, acreditamos que a forma como você se posiciona no digital impacta diretamente na forma como seus clientes enxergam o seu trabalho.</p>
-          <p>Por isso, criamos sites que vão além da estética — estruturados para transmitir credibilidade, fortalecer sua autoridade e gerar novas oportunidades.</p>
-        </div>
-      </motion.div>
-      <motion.div initial={{opacity:0,x:30}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:0.8,delay:0.2}}
-        className="grid grid-cols-2 gap-4">
-        {[
-          {num:'100%',label:'Foco no mercado jurídico'},
-          {num:'Premium',label:'Design e posicionamento'},
-          {num:'Brasil',label:'Atendimento nacional'},
-          {num:'Resultado',label:'Foco em conversão'},
-        ].map(s => (
-          <div key={s.label} className="card-premium rounded-sm p-6">
-            <div className="text-2xl font-light text-[#C9A24A] mb-2" style={{fontFamily:'Cormorant Garamond,serif'}}>{s.num}</div>
-            <div className="text-white/50 text-xs leading-snug">{s.label}</div>
+const AboutUs = () => (
+  <section id="sobre" className="section-padding bg-section-card border-y border-white/5 overflow-hidden">
+    <div className="max-w-6xl mx-auto px-6">
+      <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }} 
+          whileInView={{ opacity: 1, x: 0 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.8 }}
+          className="text-center lg:text-left"
+        >
+          <div className="tag-gold mb-5 justify-center lg:justify-start">
+            <span className="w-5 h-px bg-[#C9A24A]"/> Sobre a JurisSites
           </div>
-        ))}
-      </motion.div>
+          <h2 className="text-3xl lg:text-5xl font-light text-white mb-6 leading-tight" style={{ fontFamily: 'Cormorant Garamond,serif' }}>
+            A união entre o <span className="text-gold-gradient italic">Direito</span> e a <span className="text-gold-gradient italic">Tecnologia</span>
+          </h2>
+          <div className="gold-divider mx-auto lg:ml-0 mb-8"/>
+          
+          <div className="space-y-6 text-white/70 text-sm lg:text-base leading-relaxed font-light">
+            <p>
+              A JurisSites nasceu da união de duas visões complementares para resolver um problema real: a dificuldade que grandes advogados enfrentam para transmitir sua autoridade no mundo digital.
+            </p>
+            <p>
+              Fundada por <span className="text-white font-medium">Layla Marreta</span>, advogada que entende profundamente as dores e a ética do mercado jurídico, e <span className="text-white font-medium">Lucas Rodrigues</span>, analista de sistemas e marketing estratégico, nossa agência combina o rigor técnico do Direito com a inovação da tecnologia.
+            </p>
+            <div className="card-premium p-6 border-l-2 border-l-[#C9A24A] bg-[#C9A24A]/5">
+              <h4 className="text-[#C9A24A] font-medium mb-2 text-xs tracking-widest uppercase">Nossa Missão</h4>
+              <p className="text-white/80 italic">
+                "Transformar a presença digital de advogados através de tecnologia e marketing estratégico, garantindo que sua autoridade no mundo real seja refletida com excelência no digital."
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }} 
+          whileInView={{ opacity: 1, scale: 1 }} 
+          viewport={{ once: true }} 
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative group"
+        >
+          <div className="absolute -inset-4 bg-[#C9A24A]/10 rounded-sm blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"/>
+          <div className="relative aspect-[4/5] overflow-hidden border border-white/10 rounded-sm">
+            <img 
+              src="/images/lucas-e-layla.png" 
+              alt="Lucas e Layla - Fundadores da JurisSites" 
+              className="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"/>
+            <div className="absolute bottom-6 left-6 right-6">
+              <div className="text-white font-light text-xl" style={{ fontFamily: 'Cormorant Garamond,serif' }}>Lucas & Layla</div>
+              <div className="text-white/40 text-[10px] uppercase tracking-[0.2em]">Fundadores JurisSites</div>
+            </div>
+          </div>
+          
+          {/* Stats Overlay */}
+          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:-left-12 grid grid-cols-1 gap-2">
+            <div className="card-premium py-3 px-5 rounded-sm whitespace-nowrap shadow-2xl">
+              <div className="text-lg text-[#C9A24A] font-light" style={{ fontFamily: 'Cormorant Garamond,serif' }}>100%</div>
+              <div className="text-white/40 text-[9px] uppercase tracking-wider">Foco Jurídico</div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </div>
   </section>
 );
@@ -196,8 +231,8 @@ const Services = () => {
   return (
     <section id="servicos" className="section-padding bg-section-dark">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.8}} className="mb-16 lg:mb-20">
-          <div className="tag-gold mb-5"><span className="w-5 h-px bg-[#C9A24A]"/> Serviços</div>
+        <motion.div initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.8}} className="mb-16 lg:mb-20 text-center lg:text-left">
+          <div className="tag-gold mb-5 justify-center lg:justify-start"><span className="w-5 h-px bg-[#C9A24A]"/> Serviços</div>
           <h2 className="text-3xl lg:text-5xl font-light text-white leading-tight" style={{fontFamily:'Cormorant Garamond,serif'}}>
             Soluções para advogados que <span className="text-gold-gradient italic">querem crescer</span>
           </h2>
@@ -205,7 +240,7 @@ const Services = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {items.map((item, i) => (
             <motion.div key={item.title} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6,delay:i*0.1}}
-              className="card-premium rounded-sm p-7 flex flex-col gap-4">
+              className="card-premium rounded-sm p-7 flex flex-col items-center text-center lg:items-start lg:text-left gap-4">
               <div className="w-10 h-10 rounded-sm flex items-center justify-center text-[#C9A24A] bg-[#C9A24A]/10">{item.icon}</div>
               <h3 className="text-white font-medium text-sm leading-snug">{item.title}</h3>
               <p className="text-white/45 text-xs leading-relaxed">{item.desc}</p>
@@ -233,14 +268,14 @@ const Process = () => {
             Um processo simples, estratégico <span className="text-gold-gradient italic">e eficiente</span>
           </h2>
         </motion.div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-6">
           {steps.map((s, i) => (
             <motion.div key={s.n} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6,delay:i*0.12}}
-              className="relative">
+              className="relative flex flex-col items-center text-center lg:items-start lg:text-left">
               {i < steps.length - 1 && <div className="hidden lg:block absolute top-8 left-full w-full h-px bg-gradient-to-r from-[#C9A24A]/30 to-transparent z-0"/>}
               <div className="relative z-10">
                 <div className="step-number mb-2">{s.n}</div>
-                <div className="w-8 h-px bg-[#C9A24A]/40 mb-4"/>
+                <div className="w-8 h-px bg-[#C9A24A]/40 mb-4 mx-auto lg:ml-0"/>
                 <h3 className="text-white font-semibold text-sm mb-3 tracking-wide">{s.title}</h3>
                 <p className="text-white/45 text-xs leading-relaxed">{s.desc}</p>
               </div>
@@ -263,13 +298,13 @@ const Differentials = () => {
   return (
     <section id="diferenciais" className="section-padding bg-section-dark">
       <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <motion.div initial={{opacity:0,x:-30}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:0.8}}>
-          <div className="tag-gold mb-5"><span className="w-5 h-px bg-[#C9A24A]"/> Diferenciais</div>
+        <motion.div initial={{opacity:0,x:-30}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:0.8}} className="text-center lg:text-left">
+          <div className="tag-gold mb-5 justify-center lg:justify-start"><span className="w-5 h-px bg-[#C9A24A]"/> Diferenciais</div>
           <h2 className="text-3xl lg:text-5xl font-light text-white mb-6 leading-tight" style={{fontFamily:'Cormorant Garamond,serif'}}>
             Por que escolher <span className="text-gold-gradient italic">a JurisSites</span>
           </h2>
-          <div className="gold-divider mb-8"/>
-          <div className="space-y-4">
+          <div className="gold-divider mx-auto lg:ml-0 mb-8"/>
+          <div className="space-y-4 inline-block text-left">
             {items.map((item, i) => (
               <motion.div key={item} initial={{opacity:0,x:-20}} whileInView={{opacity:1,x:0}} viewport={{once:true}} transition={{duration:0.5,delay:i*0.08}}
                 className="flex items-center gap-4">
@@ -357,7 +392,7 @@ export default function App() {
     <div className="min-h-screen bg-[#0B0B0B]">
       <Navbar/>
       <Hero/>
-      <Authority/>
+      <AboutUs/>
       <Problem/>
       <Solution/>
       <Services/>
