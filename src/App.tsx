@@ -22,7 +22,7 @@ const Navbar = () => {
     { label: 'Contato', href: '#contato' },
   ];
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'py-4 bg-white/98 backdrop-blur-md border-b border-brand-gold/15 shadow-sm' : 'py-6 bg-transparent'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'py-3 md:py-4 bg-white/98 backdrop-blur-md border-b border-brand-gold/15 shadow-sm' : 'py-4 md:py-6 bg-transparent'}`}>
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         <a href="#home" className="flex items-center transition-transform hover:scale-102 ml-2 md:ml-4">
           <img 
@@ -30,8 +30,8 @@ const Navbar = () => {
             alt={BRAND_NAME} 
             className={`w-auto object-contain transition-all duration-500 ${
               scrolled 
-                ? 'h-20' 
-                : 'h-36'
+                ? 'h-14 md:h-20' 
+                : 'h-20 md:h-36'
             } ${!scrolled ? 'brightness-0 invert' : ''}`} 
           />
         </a>
@@ -79,7 +79,7 @@ const Navbar = () => {
 };
 
 const Hero = () => (
-  <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-burgundy-premium pt-32 pb-24">
+  <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-burgundy-premium pt-40 md:pt-48 pb-20 md:pb-24">
     <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
       <motion.div initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:1,ease:[0.2,0.8,0.2,1]}}>
         <div className="tag-premium mb-8 justify-center">
