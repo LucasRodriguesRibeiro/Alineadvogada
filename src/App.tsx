@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ArrowRight, ChevronDown, CheckCircle2, Scale, Shield, Landmark, MessageCircle, FileText, Gavel, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronDown, CheckCircle2, Scale, Shield, Landmark, MessageCircle, FileText, Gavel, ArrowUpRight, Briefcase, HeartHandshake, Users, ShoppingBag } from 'lucide-react';
 
 const WA_LINK = "https://wa.me/5574999644051";
 const BRAND_NAME = "Cavalcante Dourado";
@@ -202,10 +202,10 @@ const About = () => (
 
 const Services = () => {
   const items = [
-    { icon: <Scale size={24}/>, title: 'Direito Civil', desc: 'Resolução de conflitos contratuais, responsabilidade civil e assessoria preventiva especializada.' },
-    { icon: <Landmark size={24}/>, title: 'Família e Sucessões', desc: 'Divórcios, inventários e planejamento sucessório conduzidos com máxima discrição e sensibilidade.' },
-    { icon: <Shield size={24}/>, title: 'Consultoria Jurídica', desc: 'Pareceres técnicos e orientação estratégica preventiva para pessoas físicas e empresas de alto padrão.' },
-    { icon: <FileText size={24}/>, title: 'Direito Imobiliário', desc: 'Segurança em transações, regularização de imóveis e gestão de contratos complexos de locação.' },
+    { icon: <Briefcase size={24}/>, title: 'Direito do Trabalho', desc: 'Defesa e garantia dos direitos trabalhistas de empregados e assessoria preventiva para empregadores.' },
+    { icon: <HeartHandshake size={24}/>, title: 'Previdenciário', desc: 'Assessoria completa para concessão de aposentadorias, auxílios, BPC/LOAS e planejamento previdenciário.' },
+    { icon: <Users size={24}/>, title: 'Direito de Família', desc: 'Divórcios, pensão alimentícia, guarda, inventários e partilha de bens com atendimento humanizado.' },
+    { icon: <ShoppingBag size={24}/>, title: 'Direito do Consumidor', desc: 'Ações contra abusos de empresas, problemas com compras, contratos e indenizações por danos morais.' },
   ];
   return (
     <section id="servicos" className="py-24 lg:py-32 bg-burgundy-premium">
