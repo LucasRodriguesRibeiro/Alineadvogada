@@ -30,9 +30,9 @@ const Navbar = () => {
             alt={BRAND_NAME} 
             className={`w-auto object-contain transition-all duration-500 ${
               scrolled 
-                ? 'h-14 md:h-20' 
-                : 'h-20 md:h-36'
-            } ${!scrolled ? 'brightness-0 invert' : ''}`} 
+                ? 'h-18 md:h-20' 
+                : 'h-28 md:h-36'
+            }`} 
           />
         </a>
         <div className="hidden md:flex items-center gap-10">
@@ -358,7 +358,7 @@ const Footer = () => (
           <img 
             src="/imagens/logo aline dourada.png" 
             alt={BRAND_NAME} 
-            className="h-36 w-auto object-contain mb-8 brightness-0 invert" 
+            className="h-36 w-auto object-contain mb-8" 
           />
           <p className="text-white/70 text-sm max-w-sm font-normal leading-relaxed">
             Excelência jurídica e consultoria estratégica pautada na ética e na busca incessante pelos melhores resultados.
